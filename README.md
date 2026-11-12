@@ -1,7 +1,7 @@
 <div align="center">
   <img src="icon128.png" width="200" alt="Ujian Helper Logo" />
 
-  # 🧠 Ujian Helper — Chrome Extension
+  # Ujian Helper — Chrome Extension
 
   > **Bypass copy-paste blocker, anti-cheat tracker, dan visibility snitch di halaman ujian online** — tanpa buka DevTools / F12.
 

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ujian Helper</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      width: 260px;
+      font-family: 'Segoe UI', sans-serif;
+      background: #0f0f0f;
+      color: #e0e0e0;
+      padding: 16px;
+    }
+
+    h2 {
+      font-size: 15px;
+      color: #7dd3fc;
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+    }
+
+    .toggle-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid #1e1e1e;
+    }
+
+    .toggle-row:last-of-type { border-bottom: none; }
+
+    .label {
+      font-size: 12px;
+      color: #ccc;
+    }
+
+    .sublabel {
+      font-size: 10px;
+      color: #666;
+      margin-top: 2px;
+    }
+
+    /* Toggle switch */
+    .switch { position: relative; display: inline-block; width: 38px; height: 22px; }
+    .switch input { opacity: 0; width: 0; height: 0; }
+    .slider {
+      position: absolute; cursor: pointer;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: #333; border-radius: 22px;
+      transition: .3s;
+    }
+    .slider:before {
+      position: absolute; content: "";
+      height: 16px; width: 16px;
+      left: 3px; bottom: 3px;
+      background: #aaa; border-radius: 50%;
+      transition: .3s;
+    }
+    input:checked + .slider { background: #3b82f6; }
+    input:checked + .slider:before { transform: translateX(16px); background: white; }
+
+    #runBtn {
+      margin-top: 14px;
+      width: 100%;
+      padding: 9px;
+      background: #3b82f6;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    #runBtn:hover { background: #2563eb; }
+    #runBtn:active { background: #1d4ed8; }
+
+    #status {
+      margin-top: 10px;
+      font-size: 11px;
+      text-align: center;
+      color: #4ade80;
+      min-height: 16px;
+    }
+  </style>
+</head>
+<body>
+  <h2>⚡ Ujian Helper</h2>
+
+  <div class="toggle-row">
+    <div>
+      <div class="label">🫥 Nipu Visibility</div>
+      <div class="sublabel">Tab selalu dianggap aktif</div>
+    </div>
+    <label class="switch">
+      <input type="checkbox" id="chk-visibility" checked />
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <div class="toggle-row">
+    <div>
+      <div class="label">🧹 Kill jQuery Events</div>
+      <div class="sublabel">Matiin blur/focus tracking</div>
+    </div>
+    <label class="switch">
+      <input type="checkbox" id="chk-jquery" checked />
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <div class="toggle-row">
+    <div>
+      <div class="label">⏱️ Bantai Semua Timer</div>
+      <div class="sublabel">clearInterval 1–99999</div>
+    </div>
+    <label class="switch">
+      <input type="checkbox" id="chk-timer" checked />
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <div class="toggle-row">
+    <div>
+      <div class="label">🧼 Reset Cheat Counter</div>
+      <div class="sublabel">localStorage cheat = 0</div>
+    </div>
+    <label class="switch">
+      <input type="checkbox" id="chk-storage" checked />
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <div class="toggle-row">
+    <div>
+      <div class="label">📋 Bypass Copy-Paste</div>
+      <div class="sublabel">Unlock copas + klik kanan</div>
+    </div>
+    <label class="switch">
+      <input type="checkbox" id="chk-copas" checked />
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <div class="toggle-row">
+    <div>
+      <div class="label">🖱️ Force User Select</div>
+      <div class="sublabel">Injek CSS biar bisa blok teks</div>
+    </div>
+    <label class="switch">
+      <input type="checkbox" id="chk-select" checked />
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <button id="runBtn">🚀 Jalankan Sekarang</button>
+  <div id="status"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

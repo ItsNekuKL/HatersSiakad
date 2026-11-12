@@ -72,13 +72,13 @@ Extension ini menggunakan **Manifest V3** dengan `chrome.scripting.executeScript
 
 ### Bagaimana setiap fitur bekerja:
 
-#### 🫥 Nipu Visibility
+#### Nipu Visibility
 Web ujian sering memantau `document.visibilityState` dan event `blur` untuk mendeteksi apakah kamu berpindah tab. Extension ini:
 - Meng-override property `visibilityState` → selalu `'visible'`
 - Meng-override property `hidden` → selalu `false`
 - Menambahkan event listener `capture` yang langsung `stopImmediatePropagation()` untuk `visibilitychange`, `blur`, dan `focus`
 
-#### 🧹 Kill jQuery Events
+#### Kill jQuery Events
 Banyak platform ujian menggunakan jQuery untuk binding event listener. Extension ini memanggil:
 ```js
 $(window).off("blur focus");
@@ -86,19 +86,19 @@ $(document).off("visibilitychange");
 ```
 untuk memutus semua listener yang sudah terpasang lewat jQuery.
 
-#### ⏱️ Bantai Semua Timer
+#### Bantai Semua Timer
 Timer (`setInterval`) dipakai untuk polling aktivitas secara berkala. Extension menyapu semua interval dengan:
 ```js
 for (let i = 1; i < 99999; i++) window.clearInterval(i);
 ```
 
-#### 🧼 Reset Cheat Counter
+#### Reset Cheat Counter
 Beberapa sistem menyimpan hitungan "pelanggaran" di `localStorage`. Extension mereset key `cheat` ke `0`:
 ```js
 localStorage.setItem("cheat", 0);
 ```
 
-#### 📋 Bypass Copy-Paste
+#### Bypass Copy-Paste
 Memblokir event copy/paste biasanya dilakukan dengan `addEventListener`. Extension menambahkan listener di fase **capture** (prioritas tertinggi) yang langsung `stopImmediatePropagation()`:
 ```js
 ['copy', 'paste', 'cut', 'contextmenu', 'selectstart'].forEach(event => {
@@ -107,7 +107,7 @@ Memblokir event copy/paste biasanya dilakukan dengan `addEventListener`. Extensi
 ```
 Listener capture berjalan sebelum listener lain, sehingga efektif membatalkan blokir.
 
-#### 🖱️ Force User Select
+#### Force User Select
 Inject CSS global yang memaksa semua elemen agar bisa disorot:
 ```css
 * { -webkit-user-select: text !important; user-select: text !important; }

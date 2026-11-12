@@ -3,7 +3,7 @@
 
   # Ujian Helper — Chrome Extension
 
-  > **Bypass copy-paste blocker, anti-cheat tracker, dan visibility snitch di halaman ujian online** — tanpa buka DevTools / F12.
+  **Bypass copy-paste blocker, anti-cheat tracker, dan visibility snitch di halaman ujian online** — tanpa buka DevTools / F12.
 
   ![Manifest V3](https://img.shields.io/badge/Manifest-V3-blue?style=flat-square)
   ![Chrome](https://img.shields.io/badge/Browser-Chrome-yellow?style=flat-square)

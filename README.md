@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="icon128.png" width="500" alt="Ujian Helper Logo" />
+  <img src="icon128.png" width="200" alt="Ujian Helper Logo" />
 
   # 🧠 Ujian Helper — Chrome Extension
 
